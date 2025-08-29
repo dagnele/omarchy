@@ -16,5 +16,18 @@ Personal Hyprland + Omarchy overrides for my Mac setup. Uses upstream Omarchy de
 - Follow guidelines in `AGENTS.md` for style, naming, bindings, safety
 - Add new bindings in `bindings.conf` with `bindd = SUPER, ...` pattern
 
+## Toggle Internal Display
+Temporarily disable / re-enable the laptop internal (eDP-1) panel.
+
+Disable internal panel:
+```
+hyprctl keyword monitor "eDP-1,disable"
+```
+
+Re-enable with preferred mode, automatic position, scale 1:
+```
+hyprctl keyword monitor "eDP-1,preferred,auto,1"
+```
+
 ## License
 MIT
