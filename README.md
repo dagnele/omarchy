@@ -1,33 +1,57 @@
-# Omarchy customization for my mac
+# Dotfiles
 
-Personal Hyprland + Omarchy overrides for my Mac setup. Uses upstream Omarchy defaults and layers local customizations only where needed.
+Personal configuration files managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## Structure
-- `macbook/.config/hypr/` user override configs (sourced after Omarchy defaults)
-- `macbook/.config/hypr/scripts/` small helper scripts (keyboard backlight, lid events)
-- Theme files are referenced from `~/.config/omarchy/current/theme/` (not in this repo)
+## Quick Start
 
-## Key Commands
-- Keyboard backlight: XF86KbdBrightnessUp/Down (OSD feedback)
-- Lid script auto-disables internal panel when closed
+```bash
+# Install all components
+./run-all-installs.sh
 
-## Development
-- Lint scripts: `shellcheck macbook/.config/hypr/scripts/*.sh`
-- Follow guidelines in `AGENTS.md` for style, naming, bindings, safety
-- Add new bindings in `bindings.conf` with `bindd = SUPER, ...` pattern
-
-## Toggle Internal Display
-Temporarily disable / re-enable the laptop internal (eDP-1) panel.
-
-Disable internal panel:
-```
-hyprctl keyword monitor "eDP-1,disable"
+# Or install individually
+./00-install-stow.sh       # Install GNU Stow (prerequisite)
+./01-install-opencode.sh   # Install OpenCode config
+./02-install-nvim.sh       # Install Neovim config
+./10-install-hyprland.sh   # Install Hyprland config
 ```
 
-Re-enable with preferred mode, automatic position, scale 1:
+## Components
+
+- **opencode**: OpenCode editor configuration with Chrome DevTools MCP
+- **nvim**: Neovim configuration with relative numbers and OpenCode integration
+- **hyprland**: Hyprland window manager overrides (GB keyboard layout)
+
+## How It Works
+
+Each component directory mirrors the structure of `~/.config/`. Running `stow <component>` creates symlinks from this repo to your home directory.
+
+```bash
+# Example structure
+nvim/.config/nvim/...  →  ~/.config/nvim/...
 ```
-hyprctl keyword monitor "eDP-1,preferred,auto,1"
+
+## Manual Usage
+
+```bash
+# Apply a configuration
+stow -vv nvim
+
+# Remove a configuration
+stow -D nvim
+
+# Restow (useful after updates)
+stow -R nvim
 ```
+
+## Utilities
+
+- **append-if-not-present.sh**: Helper script to safely append lines to config files without duplicates
+
+## Requirements
+
+- GNU Stow
+- Arch Linux (scripts use `pacman`)
 
 ## License
-MIT
+
+See [LICENSE](LICENSE)
