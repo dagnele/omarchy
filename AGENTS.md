@@ -5,9 +5,12 @@ This is a dotfiles management repository using GNU Stow for symlinking configura
 
 ## Commands
 - **Install all**: `./run-all-installs.sh` - Runs all numbered install scripts in order
-- **Install single component**: `./<NN>-install-<component>.sh` (e.g., `./00-install-stow.sh`)
+- **Install single component**: `./<NN>-install-<component>.sh` (e.g., `./00-install-yay.sh`)
 - **Apply configs with Stow**: `stow -vv <component>` (e.g., `stow -vv nvim`)
 - **No tests/build**: This repository has no test suite or build process
+
+## Installation Order
+Scripts run in numerical order: 00-yay → 01-stow/opencode → 02-nvim → 03-chrome → 04-android-studio → 10-hyprland. AUR packages (Chrome, Android Studio) require yay to be installed first.
 
 ## Code Style Guidelines
 

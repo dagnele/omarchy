@@ -9,17 +9,26 @@ Personal configuration files managed with [GNU Stow](https://www.gnu.org/softwar
 ./run-all-installs.sh
 
 # Or install individually
-./00-install-stow.sh       # Install GNU Stow (prerequisite)
-./01-install-opencode.sh   # Install OpenCode config
-./02-install-nvim.sh       # Install Neovim config
-./10-install-hyprland.sh   # Install Hyprland config
+./00-install-yay.sh            # Install yay (AUR helper)
+./01-install-stow.sh           # Install GNU Stow
+./01-install-opencode.sh       # Install OpenCode config
+./02-install-nvim.sh           # Install Neovim config
+./03-install-chrome.sh         # Install Google Chrome
+./04-install-android-studio.sh # Install Android Studio
+./10-install-hyprland.sh       # Install Hyprland config
 ```
 
 ## Components
 
+### Configurations (managed with Stow)
 - **opencode**: OpenCode editor configuration with Chrome DevTools MCP
 - **nvim**: Neovim configuration with relative numbers and OpenCode integration
 - **hyprland**: Hyprland window manager overrides (GB keyboard layout)
+
+### Applications
+- **yay**: AUR helper for installing packages from Arch User Repository
+- **Google Chrome**: Web browser
+- **Android Studio**: Android development IDE
 
 ## How It Works
 
@@ -49,8 +58,8 @@ stow -R nvim
 
 ## Requirements
 
-- GNU Stow
-- Arch Linux (scripts use `pacman`)
+- Arch Linux (scripts use `pacman` and AUR via `yay`)
+- Internet connection for downloading packages
 
 ## License
 
