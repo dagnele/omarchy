@@ -7,7 +7,11 @@ mkdir -p ~/.config/tmux
 stow -vv tmux
 
 echo "Installing Tmux Plugin Manager (TPM)..."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [[ -d ~/.tmux/plugins/tpm ]]; then
+  echo "✓ TPM already exists"
+else
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
 echo "Installing Tmux..."
 
@@ -18,7 +22,7 @@ if command -v tmux &>/dev/null; then
 fi
 
 echo "Installing Tmux from official repositories..."
-pacman -S --noconfirm tmux
+sudo pacman -S --noconfirm tmux
 
 if command -v tmux &>/dev/null; then
   echo "✓ Tmux installed successfully!"
