@@ -10,11 +10,15 @@ Personal configuration files managed with [GNU Stow](https://www.gnu.org/softwar
 
 # Or install individually
 ./00-install-yay.sh            # Install yay (AUR helper)
-./01-install-stow.sh           # Install GNU Stow
+./00-install-paru.sh           # Install paru (AUR helper)
+./00-install-stow.sh           # Install GNU Stow
 ./01-install-opencode.sh       # Install OpenCode config
 ./02-install-nvim.sh           # Install Neovim config
 ./03-install-chrome.sh         # Install Google Chrome
 ./04-install-android-studio.sh # Install Android Studio
+./05-install-bash-vim.sh       # Install bash vim mode
+./06-install-tmux.sh           # Install tmux config
+./07-install-brave.sh         # Install Brave browser
 ./10-install-hyprland.sh       # Install Hyprland config
 ```
 
@@ -24,10 +28,13 @@ Personal configuration files managed with [GNU Stow](https://www.gnu.org/softwar
 - **opencode**: OpenCode editor configuration with Chrome DevTools MCP
 - **nvim**: Neovim configuration with relative numbers and OpenCode integration
 - **hyprland**: Hyprland window manager overrides (GB keyboard layout)
+- **bash**: Bash configuration with vim mode
+- **tmux**: Terminal multiplexer configuration
 
 ### Applications
-- **yay**: AUR helper for installing packages from Arch User Repository
+- **yay/paru**: AUR helpers for installing packages from Arch User Repository
 - **Google Chrome**: Web browser
+- **Brave Browser**: Privacy-focused web browser
 - **Android Studio**: Android development IDE
 
 ## How It Works
