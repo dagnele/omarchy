@@ -7,7 +7,17 @@
       "enabled": true,
       "command": [
         "npx",
+        "-y",
         "chrome-devtools-mcp@latest"
+      ]
+    },
+    "github": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-github"
       ]
     }
   }

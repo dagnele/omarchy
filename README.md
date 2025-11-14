@@ -80,6 +80,28 @@ Most install scripts handle stowing automatically, but you can manage configs ma
 
 - **append-if-not-present.sh**: Safely appends lines to config files without creating duplicates
 
+## Environment Variables
+
+### GitHub Personal Access Token
+
+OpenCode requires a GitHub personal access token to interact with GitHub repositories. Set this in your `~/.bashrc`:
+
+```bash
+# Add to ~/.bashrc
+export GITHUB_PERSONAL_ACCESS_TOKEN="your_token_here"
+```
+
+After adding, reload your shell:
+```bash
+source ~/.bashrc
+```
+
+To generate a GitHub personal access token:
+1. Go to https://github.com/settings/tokens
+2. Click "Generate new token (classic)"
+3. Select required scopes (repo, workflow, etc.)
+4. Copy the generated token and add it to your bashrc
+
 ## Manual Steps
 
 These are system configuration changes that were performed manually and are not automated by the install scripts:
