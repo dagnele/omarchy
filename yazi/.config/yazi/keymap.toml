@@ -1,0 +1,8 @@
+[mgr]
+# Navigation
+prepend_keymap = [
+  { on = [ "h" ], run = "leave", desc = "Go back" },
+  { on = [ "l" ], run = "enter", desc = "Enter directory" },
+  { on = [ "k" ], run = "arrow -1", desc = "Move up" },
+  { on = [ "j" ], run = "arrow 1", desc = "Move down" },
+]

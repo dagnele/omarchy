@@ -1,0 +1,28 @@
+[mgr]
+# Show hidden files
+show_hidden = true
+
+# Sort by modified time, directories first
+sort_by = "mtime"
+sort_sensitive = false
+sort_reverse = true
+sort_dir_first = true
+
+[preview]
+# Enable image preview
+image_filter = "lanczos3"
+image_quality = 90
+
+# Maximum file size for preview (in bytes)
+max_width = 1920
+max_height = 1080
+
+[opener]
+# Default file opener
+edit = [
+  { run = '$EDITOR "$@"', block = true },
+]
+
+[input]
+# Cursor style
+cursor_blink = true
