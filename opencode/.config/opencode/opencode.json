@@ -15,9 +15,7 @@
       "type": "local",
       "enabled": true,
       "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-github"
+        "github-mcp-server-mcp"
       ]
     }
   }
